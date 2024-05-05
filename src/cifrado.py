@@ -1,8 +1,5 @@
-#from modulos import mod_tablas
-
 texto_inicial = ""
 indice_de_rotacion = 0
-palabra_clave = "Ingresa la palabra clave:"
 sum_clave_y_cesar = 0
 texto_en_cesar = ""
 texto_en_vigenere = ""
@@ -19,12 +16,24 @@ def integracionCesar():
             rotacion = alfabeto[+indice_de_rotacion:] + alfabeto[:indice_de_rotacion]
             traduccion = str.maketrans(alfabeto + alfabeto.upper(), rotacion + rotacion.upper())
             texto_en_cesar = texto_inicial.translate(traduccion)
-            print(texto_en_cesar)   
+            return print(texto_en_cesar)   
     else:
         print("Ingresa un numero valido")
 integracionCesar()
 
+##Diccionario carcacter-valor
 
-def integracionVigenere(texto_en_cesar):
-     palabra_clave = str(input(palabra_clave + espacios))
-     str.maketrans(texto_en_cesar + texto_en_cesar.punctuation)
+def integracionVigenere():
+     intentos = 0
+     entrada_clave = "Ingresa la palabra clave:"
+     palabra_clave = input(entrada_clave + espacios)
+     while True:
+        intentos += 1
+        if (len(palabra_clave) >= 3 and len(palabra_clave) <= 23):
+                print("OK")
+        if len(palabra_clave) <= 3 :
+                print(intentos)
+                input("Ingresa una palabra valida:" + espacios)
+     return print(intentos)
+
+integracionVigenere()
