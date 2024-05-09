@@ -1,3 +1,11 @@
+import os
+import sys
+sys.path.append(os.path.abspath("modulos/mod_tablas"))
+#import mod_tablas
+#from modulos.mod_tablas import tabla_alfabeto 
+
+from modulos.mod_tablas import tabla_alfabeto
+
 texto_inicial = ""
 indice_de_rotacion = 0
 sum_clave_y_cesar = 0
@@ -10,6 +18,9 @@ entrada_clave = "Ingresa la palabra clave:"
 alfabeto = "abcdefghijklmnopqrstuvwxyz"
 espacios = " "
 
+print(tabla_alfabeto)
+
+#Funcion de integracion de texto a Cesar
 def integracionCesar():
     intentos_1 = 0
     contador = 4
@@ -18,11 +29,14 @@ def integracionCesar():
     while True:
         intentos_1 += 1
         if indice_de_rotacion >= 1 and indice_de_rotacion <= 26 and intentos_1 <= 3:
+            #Se rota el alfabeto hacia adelante
             rotacion = alfabeto[+indice_de_rotacion:] + alfabeto[:indice_de_rotacion]
+            #se implementa traduccion a ASCII de minusculas y mayusculas
             traduccion = str.maketrans(alfabeto + alfabeto.upper(), rotacion + rotacion.upper())
             texto_en_cesar = texto_inicial.translate(traduccion)
-            print(texto_en_cesar) 
+            return texto_en_cesar
             break            
+        #si el indice de rotacion no esta en el rango, hay 3 intentos para escribir el correcto
         elif intentos_1 <= 3:
              print(intentos_1)
              contador -= 1
@@ -34,17 +48,23 @@ def integracionCesar():
              break
 integracionCesar()
 
-##Diccionario carcacter-valor
+#Funcion de integracion de Cesar a Vigenere
 
-def integracionVigenere():
+def integracionVigenere(texto_en_cesar):
      intentos = 0
      contador = 4
      palabra_clave = input(entrada_clave + espacios)
      while True:
         intentos += 1
+        #Verificando que la palabra clave no se ni muy corta ni muy larga
         if (len(palabra_clave) >= 3 and len(palabra_clave) <= 23 and intentos <= 3):
-                print("OK")
+                #try:
+                     #cambio = ord(alfabeto)
+                     #print(cambio)
+                #except Exception as e:
+                     #print("Error: ", e)
                 break
+        #Si la palabra clave no entra en el rango de longitud, hay 3 intentos para escribirla correctamente
         elif intentos <= 3:
               contador -= 1
               print("Te quedan " + str(contador) + " intentos")
@@ -54,4 +74,5 @@ def integracionVigenere():
              break
      return print(intentos)
 
-integracionVigenere()
+integracionVigenere(texto_en_cesar)
+
