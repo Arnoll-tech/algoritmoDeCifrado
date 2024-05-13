@@ -1,27 +1,6 @@
-#alfabeto = "abcdefghijklmnopeqrstuvwxyz"
-#r = "Ingresa numero de rotacion"
-#s# = ""
-#t = "Ingresa texto a cifrar"
-#u = ""
-#v = "abcdefghijklmnopqrstuvwxyz"
-#w = ""
-#x = ""
-#y = ""
-#z = ""
-#def rotacion(t,u,v,w,x,y,z):
-    #z = input(print(t))
-    #w = int(input(print(r)))
-    #if (w >= 1 and w <= 26):
-        #u = v[+w:] + v[:w]
-        #x = str.maketrans(v + v.upper(), u + u.upper())
-        #y = z.translate(x)
-#        print(y)
-    #else:
-#        print("Ingresa un numero valido")
-#
-#rotacion(t,u,v,w,x,y,z)
+from string import printable
 
-
+print(str(printable))
 tabla_alfabeto = {
     "a":1,
     "b":2,
