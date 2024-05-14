@@ -1,5 +1,6 @@
+#!/usr/bin/env/ python3
 from string import printable as alfabeto
-#from modulos.mod_tablas import tabla_alfabeto
+from modulos import mod_argumentos
 
 sum_clave_y_cesar = 0
 texto_en_cesar = ""
