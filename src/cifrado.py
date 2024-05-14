@@ -1,6 +1,7 @@
-#!/usr/bin/env/ python3
+#!/usr/bin/env python
+#-*- encoding: utf-8 -*-
 from string import printable as alfabeto
-from modulos import mod_argumentos
+from modulos import mod_argumentos, mod_banner
 
 sum_clave_y_cesar = 0
 texto_en_cesar = ""
@@ -11,6 +12,7 @@ entrada_indice = "Ingresa el numero de rotacion: \n"
 entrada_clave = "Ingresa la palabra clave: \n"
 espacios = " "
 
+mod_banner.banner()
 
 #Funcion de integracion de texto a Cesar
 def integracionCesar():
