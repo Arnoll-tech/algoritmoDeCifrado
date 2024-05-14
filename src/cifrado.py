@@ -28,15 +28,14 @@ def integracionCesar():
             #se implementa traduccion a ASCII de minusculas y mayusculas
             traduccion = str.maketrans(alfabeto + alfabeto.upper(), rotacion + rotacion.upper())
             texto_en_cesar = texto_inicial.translate(traduccion)
-            print(texto_en_cesar)
-            return texto_en_cesar
+            return mod_argumentos.verbose(texto_en_cesar)
             break            
         #si el indice de rotacion no esta en el rango, hay 3 intentos para escribir el correcto
         elif intentos_1 <= 4:
              contador -= 1
              print("Te quedan " + str(contador) + " intentos")
              indice_de_rotacion = int(input("Ingresa un numero valido:" + espacios))
-             
+
         else:
              print("error")
              break
