@@ -5,9 +5,12 @@ sum_clave_y_cesar = 0
 texto_en_cesar = ""
 texto_en_vigenere = ""
 texto_en_hex = ""
+# volver grafico
 entrada_texto = "Ingresa texto a cifrar: \n"
 entrada_indice = "Ingresa el numero de rotacion: \n"
 entrada_clave = "Ingresa la palabra clave: \n"
+# Hasta aqui
+
 espacios = " "
 
 
